@@ -6,6 +6,8 @@ Displaying all purchases:
 
 <div class="purchases">
   <ul>
-    <li>2011-01-26: ￥2000 (groceries)</li>
+    <% @purchases.each do |p| %>
+    <li><%= p.date %>: \<%= p.amount %> (<%= p.comment %>)</li>
+    <% end %>
   </ul>
 </div>

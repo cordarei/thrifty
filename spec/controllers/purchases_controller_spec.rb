@@ -15,8 +15,10 @@ describe PurchasesController do
     end
 
     it "should have list of purchases" do
+      @purchase = Factory(:purchase)
       get :index
       response.should have_selector("div.purchases")
+      response.should have_selector("li", :content => @purchase.comment)
     end
   end
 
